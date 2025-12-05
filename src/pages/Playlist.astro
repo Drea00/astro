@@ -9,7 +9,7 @@ import Layout from '../layouts/Layout.astro';
 	<section class="mobile">
         <h1> PLease Load This Website on Desktop/Laptop Only Thanks</h1>
     </section>
-    <section class="qoute-con">
+    <section id="hero-play">
         <main id="main-con">
             <div class="main-content">
                 
@@ -18,18 +18,75 @@ import Layout from '../layouts/Layout.astro';
     </section>
     <section class="qoute-sec">
         <main class="qoute-info">
-            <div class="qoute-content">
-                <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/track/0fX4oNGBWO3dSGUZcVdVV2?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-                <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/track/0fX4oNGBWO3dSGUZcVdVV2?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-                <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/track/0fX4oNGBWO3dSGUZcVdVV2?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-                <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/track/0fX4oNGBWO3dSGUZcVdVV2?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-                <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/track/0fX4oNGBWO3dSGUZcVdVV2?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            <div class="plays">
+                <div class="plays-top">
+                    <div class="playimg"></div>
+                    <div>
+                        <h2>Raps On Brains</h2>
+                    </div>
+                </div>
+                 <div>
+                         <button id="shuffle-btn">Shuffle order</button>
+                </div>
+                <div class="qoute-content" >
+                    <ol id="quotes" >
+                        <li> Humble</li>
+                        <li> D.N.A </li>
+                        <li> Alright</li>
+                        <li> King Kunta</li>
+                        <li> Swimming Pools</li>
+                        <li> Backseat Freestyle</li>
+                        <li> Poetic Justice</li>
+                        <li> All The Stars </li>
+                        <li> Money Trees </li>
+                        <li> Mr Morale</li>
+                        <li> Not Like Us</li>
+                    </ol>                
+                </div>
             </div>
             <div class="qoute-pic">
-                <img class="qoute-image" src="images/kendrick.png" alt="">
+                <div>
+                    <p>Type any song that you'll like and add it to the Playlist.</p>
+                    <form id="quote-form">
+                    <input
+                        type="text"
+                        id="quote-input"
+                        placeholder="Enter a new Song..."
+                        required/>
+                        <button type="submit">Add to Playlist</button>
+                    </form>
+                </div>
 
             </div>
         </main>
     </section>
    
 </Layout>
+
+<script>
+  const con = document.getElementById("quotes");
+  const frames = Array.from(con.children);
+  const form = document.getElementById("quote-form");
+  const input = document.getElementById("quote-input");
+
+  function shuffle() {
+    frames.sort(() => Math.random() - 0.5);
+    frames.forEach(frame => con.appendChild(frame));
+  }
+
+  document.getElementById("shuffle-btn").addEventListener("click", shuffle);
+
+  form.addEventListener("submit", (event) => {
+    event.preventDefault(); // stop page reload
+
+    const value = input.value.trim();
+    if (!value) return;
+
+    const li = document.createElement("li");
+    li.textContent = value;
+    con.appendChild(li);
+
+    input.value = "";
+    input.focus();
+  });
+</script>

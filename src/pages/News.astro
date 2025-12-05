@@ -3,37 +3,43 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="Blog">
-    <section id="hero-sec">
+    <section id="hero-news">
         <main id="main-con">
             <div class="main-content">
 				
             </div>
         </main>
     </section>
-  <main class="container">
-    <h1>Blog</h1>
-    <ul>
-      <li><a href="/post/first-post">My First Astro Blog Post</a></li>
-      <li><a href="/post/another-post">Another Post</a></li>
-    </ul>
-  </main>
   <section id="profile-sec">
-        <main class="pro-info">
-            <div class="pro-pic"></div>
-            <div class="pro-content">
-                <div class="pro-name">
-                    <h2>Kendrick Lamar</h2>
-                    <p> K.DOT</p>
-                </div>
-                <div class="pro-details">
-                	<div class="pro-details1">
-						<p class="main-para">
-							Kendrick Lamar Duckworth is an American rapper, songwriter, and record producer. 
-							He is widely regarded as one of the most influential and skilled lyricists in contemporary hip-hop.
-						</p>        
-                    </div>
-                </div>
-            </div>
+     <h1>Latest News</h1>     
+        <main class="blog-info"> 
+            <a href="/post/first-post">
+                <div  class="blogcon">
+                    <div class="blogimg1" ></div>
+                    <div class="blogtxt">
+                        <h2>'GNX' and Kendrick's Unstoppable 2025 Chart</h2>
+                        <p>Kendrick Lamar closed 2025 dominating Billboard's year-end R&B/Hip-Hop charts, with "Luther" (feat. SZA) leading the pack and securing the top four rap songs.</p>
+                    </div>                
+                </div>         
+            </a>  
+            <a href="/post/Second-post">
+                <div  class="blogcon">
+                    <div class="blogimg2"></div>
+                    <div class="blogtxt">
+                        <h2>Inside the Making of 'GNX': 100 Tracks of Pure Genius</h2>
+                        <p> Producers Jack Antonoff, Mustard, and Sounwave revealed Kendrick Lamar poured out nearly 100 songs during GNX sessions </p>
+                    </div>                
+                </div>         
+            </a>  
+            <a href="/post/third-post">
+                <div  class="blogcon">
+                    <div class="blogimg3"></div>
+                    <div class="blogtxt">
+                        <h2>"Not Like Us" Crowned Apple Music's Top Rap Song of 2025</h2>
+                        <p>Kendrick Lamar's explosive diss track "Not Like Us" has been named Apple Music's most-streamed rap song of 2025</p>
+                    </div>                
+                </div>         
+            </a>  
         </main>
     </section>
 </Layout>
